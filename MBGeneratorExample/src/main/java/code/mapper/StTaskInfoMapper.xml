@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.storm.task.dao.StTaskInfoDao">
+  <resultMap id="BaseResultMap" type="com.storm.task.entity.StTaskInfo">
+    <id column="ID" jdbcType="BIGINT" property="id" />
+    <result column="ST_ID" jdbcType="BIGINT" property="stId" />
+    <result column="ST_CODE" jdbcType="VARCHAR" property="stCode" />
+    <result column="ST_LOGO" jdbcType="VARCHAR" property="stLogo" />
+    <result column="ST_NAME" jdbcType="VARCHAR" property="stName" />
+    <result column="ST_AMOUNT" jdbcType="DECIMAL" property="stAmount" />
+    <result column="PROVICE_CODE" jdbcType="VARCHAR" property="proviceCode" />
+    <result column="CITY_CODE" jdbcType="VARCHAR" property="cityCode" />
+    <result column="AREA_CODE" jdbcType="VARCHAR" property="areaCode" />
+    <result column="WORK_ADDR_LONG" jdbcType="VARCHAR" property="workAddrLong" />
+    <result column="WORK_ADDR_LAT" jdbcType="VARCHAR" property="workAddrLat" />
+    <result column="ST_SIGNUP_ENDTIME" jdbcType="TIMESTAMP" property="stSignupEndtime" />
+    <result column="USER_ID" jdbcType="BIGINT" property="userId" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="STATE_" jdbcType="TINYINT" property="state" />
+    <result column="ENABLE_" jdbcType="TINYINT" property="enable" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="ENTRY_COUNT" jdbcType="INTEGER" property="entryCount" />
+    <result column="DEPOSIT_PAY_STATE" jdbcType="TINYINT" property="depositPayState" />
+    <result column="PRE_STATE" jdbcType="INTEGER" property="preState" />
+    <result column="IS_APPLY_TRANSFER" jdbcType="TINYINT" property="isApplyTransfer" />
+    <result column="CURRENT_NODE" jdbcType="BIGINT" property="currentNode" />
+    <result column="ST_SEND_SOURCE" jdbcType="TINYINT" property="stSendSource" />
+    <result column="FOLLOW_USER_ID" jdbcType="BIGINT" property="followUserId" />
+    <result column="FOLLOW_USER_NAME" jdbcType="VARCHAR" property="followUserName" />
+    <result column="CURRENT_NODE_NAME" jdbcType="VARCHAR" property="currentNodeName" />
+    <result column="NEED_FEE" jdbcType="TINYINT" property="needFee" />
+    <result column="EXAMINE_STATE" jdbcType="TINYINT" property="examineState" />
+    <result column="FEE_PAY_STATE" jdbcType="TINYINT" property="feePayState" />
+    <result column="APPROVE_TIME" jdbcType="TIMESTAMP" property="approveTime" />
+    <result column="ORIGIN" jdbcType="TINYINT" property="origin" />
+  </resultMap>
+  
+  <sql id="columns">
+    ID,ST_ID,ST_CODE,ST_LOGO,ST_NAME,ST_AMOUNT,PROVICE_CODE,CITY_CODE,AREA_CODE,WORK_ADDR_LONG,WORK_ADDR_LAT,ST_SIGNUP_ENDTIME,USER_ID,USER_NAME,STATE_,ENABLE_,CREATE_TIME,UPDATE_TIME,ENTRY_COUNT,DEPOSIT_PAY_STATE,PRE_STATE,IS_APPLY_TRANSFER,CURRENT_NODE,ST_SEND_SOURCE,FOLLOW_USER_ID,FOLLOW_USER_NAME,CURRENT_NODE_NAME,NEED_FEE,EXAMINE_STATE,FEE_PAY_STATE,APPROVE_TIME,ORIGIN
+  </sql>
+  
+  <sql id="where">
+    <where>
+      <if test="id != null">
+         and ID = #{id}
+      </if>
+      <if test="stId != null">
+         and ST_ID = #{stId}
+      </if>
+      <if test="stCode != null">
+         and ST_CODE = #{stCode}
+      </if>
+      <if test="stLogo != null">
+         and ST_LOGO = #{stLogo}
+      </if>
+      <if test="stName != null">
+         and ST_NAME = #{stName}
+      </if>
+      <if test="stAmount != null">
+         and ST_AMOUNT = #{stAmount}
+      </if>
+      <if test="proviceCode != null">
+         and PROVICE_CODE = #{proviceCode}
+      </if>
+      <if test="cityCode != null">
+         and CITY_CODE = #{cityCode}
+      </if>
+      <if test="areaCode != null">
+         and AREA_CODE = #{areaCode}
+      </if>
+      <if test="workAddrLong != null">
+         and WORK_ADDR_LONG = #{workAddrLong}
+      </if>
+      <if test="workAddrLat != null">
+         and WORK_ADDR_LAT = #{workAddrLat}
+      </if>
+      <if test="stSignupEndtime != null">
+         and ST_SIGNUP_ENDTIME = #{stSignupEndtime}
+      </if>
+      <if test="userId != null">
+         and USER_ID = #{userId}
+      </if>
+      <if test="userName != null">
+         and USER_NAME = #{userName}
+      </if>
+      <if test="state != null">
+         and STATE_ = #{state}
+      </if>
+      <if test="enable != null">
+         and ENABLE_ = #{enable}
+      </if>
+      <if test="createTime != null">
+         and CREATE_TIME = #{createTime}
+      </if>
+      <if test="updateTime != null">
+         and UPDATE_TIME = #{updateTime}
+      </if>
+      <if test="entryCount != null">
+         and ENTRY_COUNT = #{entryCount}
+      </if>
+      <if test="depositPayState != null">
+         and DEPOSIT_PAY_STATE = #{depositPayState}
+      </if>
+      <if test="preState != null">
+         and PRE_STATE = #{preState}
+      </if>
+      <if test="isApplyTransfer != null">
+         and IS_APPLY_TRANSFER = #{isApplyTransfer}
+      </if>
+      <if test="currentNode != null">
+         and CURRENT_NODE = #{currentNode}
+      </if>
+      <if test="stSendSource != null">
+         and ST_SEND_SOURCE = #{stSendSource}
+      </if>
+      <if test="followUserId != null">
+         and FOLLOW_USER_ID = #{followUserId}
+      </if>
+      <if test="followUserName != null">
+         and FOLLOW_USER_NAME = #{followUserName}
+      </if>
+      <if test="currentNodeName != null">
+         and CURRENT_NODE_NAME = #{currentNodeName}
+      </if>
+      <if test="needFee != null">
+         and NEED_FEE = #{needFee}
+      </if>
+      <if test="examineState != null">
+         and EXAMINE_STATE = #{examineState}
+      </if>
+      <if test="feePayState != null">
+         and FEE_PAY_STATE = #{feePayState}
+      </if>
+      <if test="approveTime != null">
+         and APPROVE_TIME = #{approveTime}
+      </if>
+      <if test="origin != null">
+         and ORIGIN = #{origin}
+      </if>
+    </where>
+  </sql>
+  
+  <insert id="insert" parameterType="com.storm.task.entity.StTaskInfo">
+    INSERT INTO ST_TASK_INFO (
+    <if test="id != null">
+      ID
+    </if>
+    <if test="stId != null">
+      ,ST_ID
+    </if>
+    <if test="stCode != null">
+      ,ST_CODE
+    </if>
+    <if test="stLogo != null">
+      ,ST_LOGO
+    </if>
+    <if test="stName != null">
+      ,ST_NAME
+    </if>
+    <if test="stAmount != null">
+      ,ST_AMOUNT
+    </if>
+    <if test="proviceCode != null">
+      ,PROVICE_CODE
+    </if>
+    <if test="cityCode != null">
+      ,CITY_CODE
+    </if>
+    <if test="areaCode != null">
+      ,AREA_CODE
+    </if>
+    <if test="workAddrLong != null">
+      ,WORK_ADDR_LONG
+    </if>
+    <if test="workAddrLat != null">
+      ,WORK_ADDR_LAT
+    </if>
+    <if test="stSignupEndtime != null">
+      ,ST_SIGNUP_ENDTIME
+    </if>
+    <if test="userId != null">
+      ,USER_ID
+    </if>
+    <if test="userName != null">
+      ,USER_NAME
+    </if>
+    <if test="state != null">
+      ,STATE_
+    </if>
+    <if test="enable != null">
+      ,ENABLE_
+    </if>
+    <if test="createTime != null">
+      ,CREATE_TIME
+    </if>
+    <if test="updateTime != null">
+      ,UPDATE_TIME
+    </if>
+    <if test="entryCount != null">
+      ,ENTRY_COUNT
+    </if>
+    <if test="depositPayState != null">
+      ,DEPOSIT_PAY_STATE
+    </if>
+    <if test="preState != null">
+      ,PRE_STATE
+    </if>
+    <if test="isApplyTransfer != null">
+      ,IS_APPLY_TRANSFER
+    </if>
+    <if test="currentNode != null">
+      ,CURRENT_NODE
+    </if>
+    <if test="stSendSource != null">
+      ,ST_SEND_SOURCE
+    </if>
+    <if test="followUserId != null">
+      ,FOLLOW_USER_ID
+    </if>
+    <if test="followUserName != null">
+      ,FOLLOW_USER_NAME
+    </if>
+    <if test="currentNodeName != null">
+      ,CURRENT_NODE_NAME
+    </if>
+    <if test="needFee != null">
+      ,NEED_FEE
+    </if>
+    <if test="examineState != null">
+      ,EXAMINE_STATE
+    </if>
+    <if test="feePayState != null">
+      ,FEE_PAY_STATE
+    </if>
+    <if test="approveTime != null">
+      ,APPROVE_TIME
+    </if>
+    <if test="origin != null">
+      ORIGIN
+    </if>
+    ) VALUES (
+    <if test="id != null">
+      #{id}
+    </if>
+    <if test="stId != null">
+      ,#{stId}
+    </if>
+    <if test="stCode != null">
+      ,#{stCode}
+    </if>
+    <if test="stLogo != null">
+      ,#{stLogo}
+    </if>
+    <if test="stName != null">
+      ,#{stName}
+    </if>
+    <if test="stAmount != null">
+      ,#{stAmount}
+    </if>
+    <if test="proviceCode != null">
+      ,#{proviceCode}
+    </if>
+    <if test="cityCode != null">
+      ,#{cityCode}
+    </if>
+    <if test="areaCode != null">
+      ,#{areaCode}
+    </if>
+    <if test="workAddrLong != null">
+      ,#{workAddrLong}
+    </if>
+    <if test="workAddrLat != null">
+      ,#{workAddrLat}
+    </if>
+    <if test="stSignupEndtime != null">
+      ,#{stSignupEndtime}
+    </if>
+    <if test="userId != null">
+      ,#{userId}
+    </if>
+    <if test="userName != null">
+      ,#{userName}
+    </if>
+    <if test="state != null">
+      ,#{state}
+    </if>
+    <if test="enable != null">
+      ,#{enable}
+    </if>
+    <if test="createTime != null">
+      ,#{createTime}
+    </if>
+    <if test="updateTime != null">
+      ,#{updateTime}
+    </if>
+    <if test="entryCount != null">
+      ,#{entryCount}
+    </if>
+    <if test="depositPayState != null">
+      ,#{depositPayState}
+    </if>
+    <if test="preState != null">
+      ,#{preState}
+    </if>
+    <if test="isApplyTransfer != null">
+      ,#{isApplyTransfer}
+    </if>
+    <if test="currentNode != null">
+      ,#{currentNode}
+    </if>
+    <if test="stSendSource != null">
+      ,#{stSendSource}
+    </if>
+    <if test="followUserId != null">
+      ,#{followUserId}
+    </if>
+    <if test="followUserName != null">
+      ,#{followUserName}
+    </if>
+    <if test="currentNodeName != null">
+      ,#{currentNodeName}
+    </if>
+    <if test="needFee != null">
+      ,#{needFee}
+    </if>
+    <if test="examineState != null">
+      ,#{examineState}
+    </if>
+    <if test="feePayState != null">
+      ,#{feePayState}
+    </if>
+    <if test="approveTime != null">
+      ,#{approveTime}
+    </if>
+    <if test="origin != null">
+      #{origin}
+    </if>
+    )
+  </insert>
+  
+  <delete id="deleteBy" parameterType="java.util.Map">
+    DELETE FROM ST_TASK_INFO 
+    <include refid="where" />
+  </delete>
+  
+  <update id="update" parameterType="com.storm.task.entity.StTaskInfo">
+    UPDATE  ST_TASK_INFO SET 
+    ID = #{id},
+    ST_ID = #{stId},
+    ST_CODE = #{stCode},
+    ST_LOGO = #{stLogo},
+    ST_NAME = #{stName},
+    ST_AMOUNT = #{stAmount},
+    PROVICE_CODE = #{proviceCode},
+    CITY_CODE = #{cityCode},
+    AREA_CODE = #{areaCode},
+    WORK_ADDR_LONG = #{workAddrLong},
+    WORK_ADDR_LAT = #{workAddrLat},
+    ST_SIGNUP_ENDTIME = #{stSignupEndtime},
+    USER_ID = #{userId},
+    USER_NAME = #{userName},
+    STATE_ = #{state},
+    ENABLE_ = #{enable},
+    CREATE_TIME = #{createTime},
+    UPDATE_TIME = #{updateTime},
+    ENTRY_COUNT = #{entryCount},
+    DEPOSIT_PAY_STATE = #{depositPayState},
+    PRE_STATE = #{preState},
+    IS_APPLY_TRANSFER = #{isApplyTransfer},
+    CURRENT_NODE = #{currentNode},
+    ST_SEND_SOURCE = #{stSendSource},
+    FOLLOW_USER_ID = #{followUserId},
+    FOLLOW_USER_NAME = #{followUserName},
+    CURRENT_NODE_NAME = #{currentNodeName},
+    NEED_FEE = #{needFee},
+    EXAMINE_STATE = #{examineState},
+    FEE_PAY_STATE = #{feePayState},
+    APPROVE_TIME = #{approveTime},
+    ORIGIN = #{origin}
+     WHERE ID = #{id}
+  </update>
+  
+  <select id="getByParam" parameterType="java.util.Map" resultMap="BaseResultMap">
+     select * from ST_TASK_INFO
+    <include refid="where" />
+  </select>
+  
+  <select id="getPageData" parameterType="java.util.Map" resultMap="BaseResultMap">
+     select * from ST_TASK_INFO
+    <include refid="where" />
+    <if test="sortColumn != null and sortColumn != ''">
+       ORDER BY #{sortColumn}
+    </if>
+     LIMIT #{offset},#{pageSize}
+  </select>
+  
+  <select id="getPageCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+     select COUNT(*) from ST_TASK_INFO
+    <include refid="where" />
+  </select>
+  
+</mapper>

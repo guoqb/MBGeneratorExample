@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="my.mybatis.generator.auto.dao.StTaskInfoDao">
+  <resultMap id="BaseResultMap" type="my.mybatis.generator.auto.entity.StTaskInfo">
+    <id column="ID" jdbcType="BIGINT" property="id" />
+    <result column="ST_ID" jdbcType="BIGINT" property="stId" />
+    <result column="ST_CODE" jdbcType="VARCHAR" property="stCode" />
+    <result column="ST_LOGO" jdbcType="VARCHAR" property="stLogo" />
+    <result column="ST_NAME" jdbcType="VARCHAR" property="stName" />
+    <result column="ST_AMOUNT" jdbcType="DECIMAL" property="stAmount" />
+    <result column="PROVICE_CODE" jdbcType="VARCHAR" property="proviceCode" />
+    <result column="CITY_CODE" jdbcType="VARCHAR" property="cityCode" />
+    <result column="AREA_CODE" jdbcType="VARCHAR" property="areaCode" />
+    <result column="WORK_ADDR_LONG" jdbcType="VARCHAR" property="workAddrLong" />
+    <result column="WORK_ADDR_LAT" jdbcType="VARCHAR" property="workAddrLat" />
+    <result column="ST_SIGNUP_ENDTIME" jdbcType="TIMESTAMP" property="stSignupEndtime" />
+    <result column="USER_ID" jdbcType="BIGINT" property="userId" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="STATE_" jdbcType="TINYINT" property="state" />
+    <result column="ENABLE_" jdbcType="TINYINT" property="enable" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="ENTRY_COUNT" jdbcType="INTEGER" property="entryCount" />
+    <result column="DEPOSIT_PAY_STATE" jdbcType="TINYINT" property="depositPayState" />
+    <result column="PRE_STATE" jdbcType="INTEGER" property="preState" />
+    <result column="IS_APPLY_TRANSFER" jdbcType="TINYINT" property="isApplyTransfer" />
+    <result column="CURRENT_NODE" jdbcType="BIGINT" property="currentNode" />
+    <result column="ST_SEND_SOURCE" jdbcType="TINYINT" property="stSendSource" />
+    <result column="FOLLOW_USER_ID" jdbcType="BIGINT" property="followUserId" />
+    <result column="FOLLOW_USER_NAME" jdbcType="VARCHAR" property="followUserName" />
+    <result column="CURRENT_NODE_NAME" jdbcType="VARCHAR" property="currentNodeName" />
+    <result column="NEED_FEE" jdbcType="TINYINT" property="needFee" />
+    <result column="EXAMINE_STATE" jdbcType="TINYINT" property="examineState" />
+    <result column="FEE_PAY_STATE" jdbcType="TINYINT" property="feePayState" />
+    <result column="APPROVE_TIME" jdbcType="TIMESTAMP" property="approveTime" />
+    <result column="ORIGIN" jdbcType="TINYINT" property="origin" />
+  </resultMap>
+  
+  <select id="getByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ST_TASK_INFO
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  
+  <sql id="where">
+    <where>
+      <if test="stId != null">
+         and ST_ID = #{stId,jdbcType=BIGINT}
+      </if>
+      <if test="stCode != null">
+         and ST_CODE = #{stCode,jdbcType=VARCHAR}
+      </if>
+      <if test="stLogo != null">
+         and ST_LOGO = #{stLogo,jdbcType=VARCHAR}
+      </if>
+      <if test="stName != null">
+         and ST_NAME = #{stName,jdbcType=VARCHAR}
+      </if>
+      <if test="stAmount != null">
+         and ST_AMOUNT = #{stAmount,jdbcType=DECIMAL}
+      </if>
+      <if test="proviceCode != null">
+         and PROVICE_CODE = #{proviceCode,jdbcType=VARCHAR}
+      </if>
+      <if test="cityCode != null">
+         and CITY_CODE = #{cityCode,jdbcType=VARCHAR}
+      </if>
+      <if test="areaCode != null">
+         and AREA_CODE = #{areaCode,jdbcType=VARCHAR}
+      </if>
+      <if test="workAddrLong != null">
+         and WORK_ADDR_LONG = #{workAddrLong,jdbcType=VARCHAR}
+      </if>
+      <if test="workAddrLat != null">
+         and WORK_ADDR_LAT = #{workAddrLat,jdbcType=VARCHAR}
+      </if>
+      <if test="stSignupEndtime != null">
+         and ST_SIGNUP_ENDTIME = #{stSignupEndtime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="userId != null">
+         and USER_ID = #{userId,jdbcType=BIGINT}
+      </if>
+      <if test="userName != null">
+         and USER_NAME = #{userName,jdbcType=VARCHAR}
+      </if>
+      <if test="state != null">
+         and STATE_ = #{state,jdbcType=TINYINT}
+      </if>
+      <if test="enable != null">
+         and ENABLE_ = #{enable,jdbcType=TINYINT}
+      </if>
+      <if test="createTime != null">
+         and CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateTime != null">
+         and UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="entryCount != null">
+         and ENTRY_COUNT = #{entryCount,jdbcType=INTEGER}
+      </if>
+      <if test="depositPayState != null">
+         and DEPOSIT_PAY_STATE = #{depositPayState,jdbcType=TINYINT}
+      </if>
+      <if test="preState != null">
+         and PRE_STATE = #{preState,jdbcType=INTEGER}
+      </if>
+      <if test="isApplyTransfer != null">
+         and IS_APPLY_TRANSFER = #{isApplyTransfer,jdbcType=TINYINT}
+      </if>
+      <if test="currentNode != null">
+         and CURRENT_NODE = #{currentNode,jdbcType=BIGINT}
+      </if>
+      <if test="stSendSource != null">
+         and ST_SEND_SOURCE = #{stSendSource,jdbcType=TINYINT}
+      </if>
+      <if test="followUserId != null">
+         and FOLLOW_USER_ID = #{followUserId,jdbcType=BIGINT}
+      </if>
+      <if test="followUserName != null">
+         and FOLLOW_USER_NAME = #{followUserName,jdbcType=VARCHAR}
+      </if>
+      <if test="currentNodeName != null">
+         and CURRENT_NODE_NAME = #{currentNodeName,jdbcType=VARCHAR}
+      </if>
+      <if test="needFee != null">
+         and NEED_FEE = #{needFee,jdbcType=TINYINT}
+      </if>
+      <if test="examineState != null">
+         and EXAMINE_STATE = #{examineState,jdbcType=TINYINT}
+      </if>
+      <if test="feePayState != null">
+         and FEE_PAY_STATE = #{feePayState,jdbcType=TINYINT}
+      </if>
+      <if test="approveTime != null">
+         and APPROVE_TIME = #{approveTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="origin != null">
+         and ORIGIN = #{origin,jdbcType=TINYINT}
+      </if>
+    </where>
+  </sql>
+  
+  <update id="update" parameterType="my.mybatis.generator.auto.entity.StTaskInfo">
+    update ST_TASK_INFO
+    set ST_ID = #{stId,jdbcType=BIGINT},
+      ST_CODE = #{stCode,jdbcType=VARCHAR},
+      ST_LOGO = #{stLogo,jdbcType=VARCHAR},
+      ST_NAME = #{stName,jdbcType=VARCHAR},
+      ST_AMOUNT = #{stAmount,jdbcType=DECIMAL},
+      PROVICE_CODE = #{proviceCode,jdbcType=VARCHAR},
+      CITY_CODE = #{cityCode,jdbcType=VARCHAR},
+      AREA_CODE = #{areaCode,jdbcType=VARCHAR},
+      WORK_ADDR_LONG = #{workAddrLong,jdbcType=VARCHAR},
+      WORK_ADDR_LAT = #{workAddrLat,jdbcType=VARCHAR},
+      ST_SIGNUP_ENDTIME = #{stSignupEndtime,jdbcType=TIMESTAMP},
+      USER_ID = #{userId,jdbcType=BIGINT},
+      USER_NAME = #{userName,jdbcType=VARCHAR},
+      STATE_ = #{state,jdbcType=TINYINT},
+      ENABLE_ = #{enable,jdbcType=TINYINT},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      ENTRY_COUNT = #{entryCount,jdbcType=INTEGER},
+      DEPOSIT_PAY_STATE = #{depositPayState,jdbcType=TINYINT},
+      PRE_STATE = #{preState,jdbcType=INTEGER},
+      IS_APPLY_TRANSFER = #{isApplyTransfer,jdbcType=TINYINT},
+      CURRENT_NODE = #{currentNode,jdbcType=BIGINT},
+      ST_SEND_SOURCE = #{stSendSource,jdbcType=TINYINT},
+      FOLLOW_USER_ID = #{followUserId,jdbcType=BIGINT},
+      FOLLOW_USER_NAME = #{followUserName,jdbcType=VARCHAR},
+      CURRENT_NODE_NAME = #{currentNodeName,jdbcType=VARCHAR},
+      NEED_FEE = #{needFee,jdbcType=TINYINT},
+      EXAMINE_STATE = #{examineState,jdbcType=TINYINT},
+      FEE_PAY_STATE = #{feePayState,jdbcType=TINYINT},
+      APPROVE_TIME = #{approveTime,jdbcType=TIMESTAMP},
+      ORIGIN = #{origin,jdbcType=TINYINT}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  
+  <insert id="insert" parameterType="my.mybatis.generator.auto.entity.StTaskInfo">
+    insert into ST_TASK_INFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="stId != null">
+        ST_ID,
+      </if>
+      <if test="stCode != null">
+        ST_CODE,
+      </if>
+      <if test="stLogo != null">
+        ST_LOGO,
+      </if>
+      <if test="stName != null">
+        ST_NAME,
+      </if>
+      <if test="stAmount != null">
+        ST_AMOUNT,
+      </if>
+      <if test="proviceCode != null">
+        PROVICE_CODE,
+      </if>
+      <if test="cityCode != null">
+        CITY_CODE,
+      </if>
+      <if test="areaCode != null">
+        AREA_CODE,
+      </if>
+      <if test="workAddrLong != null">
+        WORK_ADDR_LONG,
+      </if>
+      <if test="workAddrLat != null">
+        WORK_ADDR_LAT,
+      </if>
+      <if test="stSignupEndtime != null">
+        ST_SIGNUP_ENDTIME,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="state != null">
+        STATE_,
+      </if>
+      <if test="enable != null">
+        ENABLE_,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="entryCount != null">
+        ENTRY_COUNT,
+      </if>
+      <if test="depositPayState != null">
+        DEPOSIT_PAY_STATE,
+      </if>
+      <if test="preState != null">
+        PRE_STATE,
+      </if>
+      <if test="isApplyTransfer != null">
+        IS_APPLY_TRANSFER,
+      </if>
+      <if test="currentNode != null">
+        CURRENT_NODE,
+      </if>
+      <if test="stSendSource != null">
+        ST_SEND_SOURCE,
+      </if>
+      <if test="followUserId != null">
+        FOLLOW_USER_ID,
+      </if>
+      <if test="followUserName != null">
+        FOLLOW_USER_NAME,
+      </if>
+      <if test="currentNodeName != null">
+        CURRENT_NODE_NAME,
+      </if>
+      <if test="needFee != null">
+        NEED_FEE,
+      </if>
+      <if test="examineState != null">
+        EXAMINE_STATE,
+      </if>
+      <if test="feePayState != null">
+        FEE_PAY_STATE,
+      </if>
+      <if test="approveTime != null">
+        APPROVE_TIME,
+      </if>
+      <if test="origin != null">
+        ORIGIN,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="stId != null">
+        #{stId,jdbcType=BIGINT},
+      </if>
+      <if test="stCode != null">
+        #{stCode,jdbcType=VARCHAR},
+      </if>
+      <if test="stLogo != null">
+        #{stLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="stName != null">
+        #{stName,jdbcType=VARCHAR},
+      </if>
+      <if test="stAmount != null">
+        #{stAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="proviceCode != null">
+        #{proviceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null">
+        #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="areaCode != null">
+        #{areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="workAddrLong != null">
+        #{workAddrLong,jdbcType=VARCHAR},
+      </if>
+      <if test="workAddrLat != null">
+        #{workAddrLat,jdbcType=VARCHAR},
+      </if>
+      <if test="stSignupEndtime != null">
+        #{stSignupEndtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=TINYINT},
+      </if>
+      <if test="enable != null">
+        #{enable,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="entryCount != null">
+        #{entryCount,jdbcType=INTEGER},
+      </if>
+      <if test="depositPayState != null">
+        #{depositPayState,jdbcType=TINYINT},
+      </if>
+      <if test="preState != null">
+        #{preState,jdbcType=INTEGER},
+      </if>
+      <if test="isApplyTransfer != null">
+        #{isApplyTransfer,jdbcType=TINYINT},
+      </if>
+      <if test="currentNode != null">
+        #{currentNode,jdbcType=BIGINT},
+      </if>
+      <if test="stSendSource != null">
+        #{stSendSource,jdbcType=TINYINT},
+      </if>
+      <if test="followUserId != null">
+        #{followUserId,jdbcType=BIGINT},
+      </if>
+      <if test="followUserName != null">
+        #{followUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="currentNodeName != null">
+        #{currentNodeName,jdbcType=VARCHAR},
+      </if>
+      <if test="needFee != null">
+        #{needFee,jdbcType=TINYINT},
+      </if>
+      <if test="examineState != null">
+        #{examineState,jdbcType=TINYINT},
+      </if>
+      <if test="feePayState != null">
+        #{feePayState,jdbcType=TINYINT},
+      </if>
+      <if test="approveTime != null">
+        #{approveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="origin != null">
+        #{origin,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  
+  <sql id="columns">
+    stId,stCode,stLogo,stName,stAmount,proviceCode,cityCode,areaCode,workAddrLong,workAddrLat,stSignupEndtime,userId,userName,state,enable,createTime,updateTime,entryCount,depositPayState,preState,isApplyTransfer,currentNode,stSendSource,followUserId,followUserName,currentNodeName,needFee,examineState,feePayState,approveTime,origin
+  </sql>
+  
+  <select id="getList" parameterType="my.mybatis.generator.auto.entity.StTaskInfo" resultMap="BaseResultMap">
+     select * from ST_TASK_INFO
+    <include refid="where" />
+  </select>
+  
+  <select id="getOne" parameterType="my.mybatis.generator.auto.entity.StTaskInfo" resultMap="BaseResultMap">
+     select * from ST_TASK_INFO
+    <include refid="where" />
+  </select>
+  
+  <delete id="delete" parameterType="java.lang.Long">
+    delete from ST_TASK_INFO
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  
+  <select id="getPageCount" parameterType="java.util.Map" resultType="java.util.Long">
+     select COUNT(0) from ST_TASK_INFO
+    <include refid="where" />
+  </select>
+  
+  <select id="getPageData" parameterType="java.util.Map" resultMap="BaseResultMap">
+     select * from ST_TASK_INFO
+    <include refid="where" />
+     order by ${sortClumn} desc limit #{pageNo},#{pageSize}
+  </select></mapper>
